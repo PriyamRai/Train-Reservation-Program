@@ -1,0 +1,26 @@
+void checking(){
+char current[20],destination[20];
+    printf("\nEnter your arrival city : ");
+    scanf("%s",current);
+    printf("\nEnter your destination city : ");
+    scanf("%s",destination);
+    char cities[][10]={"Srinagar","Chandigarh","Lucknow","Surat","Delhi","Ayodhya","Kashi","Chamba","Mau","Mirzapur"};
+    _Bool currentPresent=false;
+    _Bool destinationPresent=false;
+    for(int i=0;i<10;i++){
+        if(strcmp(cities[i],current)==0){
+            currentPresent=true;
+        }
+        if(strcmp(cities[i],destination)==0){
+            destinationPresent=true;
+        }
+
+    }
+    if(currentPresent&&destinationPresent){
+        printf("Proceed to book your ticket from %s to %s",current,destination) ;
+        data();
+    } else if(!currentPresent||!destinationPresent){
+        printf("No trains are available for the choosen journey .Please try again later :)");
+        return ;
+    }
+}
